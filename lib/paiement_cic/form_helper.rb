@@ -5,7 +5,7 @@ module PaiementCic::FormHelper
 
     oMac = PaiementCic.new
     sDate = Time.now.strftime("%d/%m/%Y:%H:%M:%S")
-    chaine = [oMac.tpe, sDate, oa["montant"], oa["reference"].to_s, oa["texte-libre"], oMac.version, oa["lgue"], oMac.societe, "", "", "", "", "", "", "", "", "", "", ""].join("*")
+    chaine = [oMac.tpe, sDate, oa["montant"], oa["reference"].to_s, oa["texte-libre"], oMac.version, "EN", oMac.societe, "", "", "", "", "", "", "", "", "", "", ""].join("*")
     chaineMAC = oMac.computeHMACSHA1(chaine)
     
     url_retour      = options[:url_retour] || bank_callback_order_transactions_url
