@@ -46,7 +46,7 @@ class PaiementCic
     oa["montant"]     =  ("%.2f" % amount_in_cents) + "EUR"
     oa["reference"]   = reference
     oa["texte-libre"] = ""
-    oa["lgue"]      = "EN"
+    oa["lgue"]        = "FR"
     oa["societe"]     = societe
     oa["mail"]        = ""
     oa
