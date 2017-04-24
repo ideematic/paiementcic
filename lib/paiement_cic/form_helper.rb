@@ -22,7 +22,7 @@ module PaiementCic::FormHelper
         <input type="hidden" name="url_retour"        id="url_retour"     value="' + url_retour + '" />
         <input type="hidden" name="url_retour_ok"     id="url_retour_ok"  value="' + url_retour_ok + '" />
         <input type="hidden" name="url_retour_err"    id="url_retour_err" value="' + url_retour_err + '" />
-        <input type="hidden" name="lgue"              id="lgue"           value="' + "EN" + '" />
+        <input type="hidden" name="lgue"              id="lgue"           value="' + oa["lgue"] + '" />
         <input type="hidden" name="societe"           id="societe"        value="' + oa["societe"] + '" />
         <input type="hidden" name="texte-libre"       id="texte-libre"    value="' + oa["texte-libre"] + '" />
         <input type="hidden" name="mail"              id="mail"	          value="''" />'
