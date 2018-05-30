@@ -5,13 +5,13 @@ module PaiementCic::FormHelper
 
     oMac = PaiementCic.new
     sDate = Time.now.strftime("%d/%m/%Y:%H:%M:%S")
-    chaine = [oMac.tpe, sDate, oa["montant"], oa["reference"].to_s, oa["texte-libre"], oMac.version, oa["lgue"], oMac.societe, "", "", "", "", "", "", "", "", "", "", ""].join("*")
+    chaine = [oMac.tpe, sDate, oa["montant"], oa["reference"].to_s, (options['texte-libre'] ||  oa["texte-libre"]), oMac.version, oa["lgue"], oMac.societe, "", "", "", "", "", "", "", "", "", "", ""].join("*")
     chaineMAC = oMac.computeHMACSHA1(chaine)
-    
+
     url_retour      = options[:url_retour] || bank_callback_order_transactions_url
     url_retour_ok   = options[:url_retour_ok] || bank_callback_order_transactions_url(order)
     url_retour_err  = options[:url_retour_err] || bank_err_order_transaction_url(order)
-    
+
     html = '
         <input type="hidden" name="version"           id="version"        value="' + oa["version"] + '" />
         <input type="hidden" name="TPE"               id="TPE"            value="' + oa["TPE"] + '" />
